@@ -5,7 +5,7 @@ const cells = [
 	{
 		cat: 'Exterior · Architectural',
 		title: "St. Stephen's Cathedral",
-		img: '/exterior.jpg',
+		img: '/church.jpg',
 		tall: true,
 	},
 	{ cat: 'Lake Victoria', title: 'Kisumu at Sunrise', img: '/lake.jpg' },
