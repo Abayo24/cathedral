@@ -106,15 +106,15 @@ export function Gallery() {
 							label: 'Aerial View',
 							title: 'Cathedral Compound',
 							img: '/aerial.jpg',
-							from: 'from-royal-dark/90',
-							to: 'to-navy/80',
+							from: 'from-royal-dark/5',
+							to: 'to-navy/10',
 						},
 						{
 							label: 'Interior',
 							title: 'The Sacred Nave',
 							img: '/interior.jpg',
-							from: 'from-navy/85',
-							to: 'to-navy/50',
+							from: 'from-navy/10',
+							to: 'to-navy/10',
 						},
 					].map((c, i) => (
 						<div
