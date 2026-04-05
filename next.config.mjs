@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
-const config = {
+const nextConfig = {
   images: {
     remotePatterns: [
-      { protocol: 'https', hostname: 'images.unsplash.com' },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
     ],
   },
-}
+};
 
-export default config
+export default nextConfig;

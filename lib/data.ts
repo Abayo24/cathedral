@@ -35,7 +35,7 @@ export const CHURCH = {
   phone: '0115 162 026',
   emails: ['ststephenscathedral1@gmail.com', 'ststephenskisumu@yahoo.com'],
   address: 'P.O. Box 43 – 40100, Kisumu, Kenya',
-  domain: 'ststephenscathedral.org',
+  domain: 'ststephenscathedralkisumu.org',
   facebook: 'https://www.facebook.com/ststephenscathedralksm/about',
 }
 
@@ -48,16 +48,72 @@ export const ACCOUNTS: Account[] = [
 ]
 
 export const LEADERSHIP: Leader[] = [
-  { name: "The Rt. Rev'd Charles Ochieng Ong'injo", role: 'The Bishop', bio: 'Provides spiritual oversight, pastoral care, and strategic direction to the Cathedral and the Diocese of Maseno South.', img: '/Charles.jpg' },
-  { name: 'Vacant', role: 'The Provost', bio: 'The Provost serves as Chief Executive Officer of the Cathedral, overseeing daily administrative and ministerial operations.', img: null },
-  { name: "The Rev'd Dr. George Samuel Okoth", role: 'Minister Coordinating Music', bio: 'Leads the congregation in worship, coordinates Cathedral choirs, and oversees all musical elements of services.', img: '/George.jpg' },
-  { name: "The Rev'd Janet Atieno Oyugi–Rowa", role: 'Minister Coordinating Mission', bio: "Drives the Cathedral's evangelism, outreach programs, and community missions to spread the Good News.", img: '/Janet.jpg' },
-  { name: "The Rev'd Mary Otega Osenah", role: 'Minister Coordinating Mothers Union', bio: "Empowers the Mothers Union, focusing on family life, women's ministry, and community care.", img: '/Mary.jpg' },
-  { name: "The Rev'd Andrew Buyu", role: 'Minister Coordinating the Elderly', bio: 'Provides dedicated pastoral care, visitation, and spiritual support for our senior members.', img: '/Andrew.jpg' },
-  { name: 'The Rev’d Emmanuel Gordon Oliech', role: 'Minister Coordinating Youth', bio: 'Guides the youth ministry, organises services, and mentors young people in their spiritual journey.', img: '/Emmanuel.jpg' },
-  { name: 'The Rev’d Elisha Omollo Nyambori', role: 'Minister Coordinating Sunday School', bio: "Oversees children's ministry in a safe, engaging environment to lay biblical foundations.", img: '/Elisha.jpg' },
-  { name: '[Position Open]', role: 'Minister Coordinating KAMA', bio: "Leads the Kenya Anglican Men's Association, fostering male leadership, fellowship, and church support.", img: null },
-  { name: '[Position Open]', role: 'Cathedral Administrator', bio: 'Manages daily administrative functions, human resources, and facility operations of the Cathedral.', img: null },
+  { 
+    name: "The Rt. Rev'd Charles Ochieng Ong'injo", 
+    role: 'The Bishop', 
+    bio: 'Provides spiritual oversight, pastoral care, and strategic direction to the Cathedral and the Diocese of Maseno South.', 
+    img: '/Charles.jpg' 
+  },
+  { 
+    name: 'Vacant', 
+    role: 'The Provost', 
+    bio: 'The Provost serves as Chief Executive Officer of the Cathedral, overseeing daily administrative and ministerial operations.', 
+    img: null 
+  },
+  { 
+    name: "The Rev'd Dr. George Samuel Okoth", 
+    role: 'Minister Coordinating Music', 
+    bio: 'Leads the congregation in worship, coordinates Cathedral choirs, and oversees all musical elements of services.', 
+    img: '/George.jpg' 
+  },
+  { 
+    name: "The Rev'd Janet Atieno Oyugi–Rowa", 
+    role: 'Minister Coordinating Mission', 
+    bio: "Drives the Cathedral's evangelism, outreach programs, and community missions to spread the Good News.", 
+    img: '/Janet.jpg' 
+  },
+  { 
+    name: "The Rev'd Mary Otega Osenah", 
+    role: 'Minister Coordinating Mothers Union', 
+    bio: "Empowers the Mothers Union, focusing on family life, women's ministry, and community care.", 
+    img: '/Mary.jpg' 
+  },
+  { 
+    name: "The Rev'd Andrew Buyu", 
+    role: 'Minister Coordinating the Elderly', 
+    bio: 'Provides dedicated pastoral care, visitation, and spiritual support for our senior members.', 
+    img: '/Andrew.jpg' 
+  },
+  { 
+    name: 'The Rev’d Emmanuel Gordon Oliech', 
+    role: 'Minister Coordinating Youth', 
+    bio: 'Guides the youth ministry, organises services, and mentors young people in their spiritual journey.', 
+    img: '/Emmanuel.jpg' 
+  },
+  { 
+    name: 'The Rev’d Elisha Omollo Nyambori', 
+    role: 'Minister Coordinating Sunday School', 
+    bio: "Oversees children's ministry in a safe, engaging environment to lay biblical foundations.", 
+    img: '/Elisha.jpg' 
+  },
+  { 
+    name: "The Rev’d Zalyneer Faith Wamalwa-Oliech", 
+    role: 'Minister Coordinating the Deaf', 
+    bio: 'Provides specialized spiritual support and coordinates ministry activities tailored for the Deaf community.', 
+    img: null 
+  },
+  { 
+    name: "The Rev’d Michael Ogutu", 
+    role: 'Minister Coordinating KAMA', 
+    bio: "Leads the Kenya Anglican Men's Association, fostering male leadership, fellowship, and church support.", 
+    img: null 
+  },
+  { 
+    name: "The Rev’d Dolly Achieng Otieno", 
+    role: 'Honorary Curate', 
+    bio: 'A holder of a Diploma in Theology and a renowned hotelier in Kisumu, she serves as Honorary Curate at the Cathedral supporting the ministry to the elderly.', 
+    img: '/Dolly.jpg' 
+  },
 ]
 
 export const MINISTRIES: Ministry[] = [

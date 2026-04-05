@@ -118,50 +118,51 @@ export function About() {
 						centered
 					/>
 
-					<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4'>
-						{LEADERSHIP.map((l, i) => (
-							<div
-								key={i}
-								className={`bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:shadow-crimson/10 transition-all duration-300 hover:-translate-y-0.5 `}
-							>
-								<div className='relative w-full aspect-square overflow-hidden rounded-t-2xl'>
-									{l.img ? (
-										<Image
-											src={l.img}
-											alt={l.name}
-											fill
-											className='object-cover object-top'
-											sizes='(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw'
-										/>
-									) : (
-										<div className='w-full h-full flex items-center justify-center bg-gradient-to-br from-royal-dark to-navy'>
-											<Users
-												size={28}
-												className='text-gold/40'
-											/>
-										</div>
-									)}
-								</div>
+					<div className='flex flex-wrap justify-center gap-6 max-w-7xl mx-auto'>
+    {LEADERSHIP.map((l, i) => (
+        <div
+            key={i}
+            className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:shadow-crimson/10 transition-all duration-300 hover:-translate-y-0.5 flex flex-col items-center text-center p-6 w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(25%-1.5rem)]"
+        >
+            {/* Enlarged Circular Image Section */}
+            <div className='relative w-32 h-32 mb-6 overflow-hidden rounded-full ring-4 ring-slate-50 shadow-inner'>
+                {l.img ? (
+                    <Image
+                        src={l.img}
+                        alt={l.name}
+                        fill
+                        className='object-cover object-top'
+                        sizes='128px'
+                    />
+                ) : (
+                    <div className='w-full h-full flex items-center justify-center bg-gradient-to-br from-royal-dark to-navy'>
+                        <Users
+                            size={36}
+                            className='text-gold/40'
+                        />
+                    </div>
+                )}
+            </div>
 
-								<div className='p-4'>
-									<p
-										className={`font-ui text-[8px] tracking-[2px] uppercase mb-1.5 leading-tight ${i % 2 === 0 ? 'text-crimson' : 'text-royal'}`}
-									>
-										{l.role}
-									</p>
-									<div
-										className={`w-6 h-[2px] rounded-full mb-2 ${i % 2 === 0 ? 'bg-crimson' : 'bg-royal'}`}
-									/>
-									<div className='font-display text-[0.95rem] font-medium text-navy-mid leading-snug mb-2'>
-										{l.name}
-									</div>
-									<p className='font-body text-[0.72rem] text-muted leading-[1.8]'>
-										{l.bio}
-									</p>
-								</div>
-							</div>
-						))}
-					</div>
+            {/* Text Content - Exactly as requested */}
+            <div className='flex flex-col items-center'>
+                <p className={`font-ui text-[8px] tracking-[2px] uppercase mb-1.5 leading-tight ${i % 2 === 0 ? 'text-crimson' : 'text-royal'}`}>
+                    {l.role}
+                </p>
+                
+                <div className={`w-6 h-[2px] rounded-full mb-2 ${i % 2 === 0 ? 'bg-crimson' : 'bg-royal'}`} />
+                
+                <div className='font-display text-[0.95rem] font-medium text-navy-mid leading-snug mb-2 min-h-[2.5rem] flex items-center justify-center'>
+                    {l.name}
+                </div>
+                
+                <p className='font-body text-[0.72rem] text-muted leading-[1.8]'>
+                    {l.bio}
+                </p>
+            </div>
+        </div>
+    ))}
+</div>
 
 					{/* Community Banner */}
 					<div className='mt-6 relative h-56 sm:h-64 rounded-3xl overflow-hidden'>

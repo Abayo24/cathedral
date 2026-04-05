@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Libre_Baskerville, Jost } from 'next/font/google';
 import { Navigation } from '@/components/Navigation';
+// @ts-ignore: Next.js handles this global CSS side-effect import
 import './globals.css';
 
 const cormorant = Cormorant_Garamond({
