@@ -117,13 +117,49 @@ export const LEADERSHIP: Leader[] = [
 ]
 
 export const MINISTRIES: Ministry[] = [
-  { name: "Kenya Anglican Men's Association", abbr: 'KAMA', img: '/kama.jpg', desc: 'Men of integrity leading in faith, fellowship, and service to the Cathedral community.' },
-  { name: 'Mothers Union', abbr: 'MU', img: '/mothers.jpg', desc: 'Christian care for families, marriage enrichment, and compassionate community service.' },
-  { name: 'Youth & KAYO', abbr: 'KAYO', img: '/youth.jpg', desc: 'Empowering the next generation through fellowship, discipleship, and mentorship.' },
-  { name: 'Sunday School', abbr: 'SS', img: '/sunday-school.jpg', desc: 'Teaching biblical foundations to children in a safe, joyful, and nurturing environment.' },
-  { name: 'Music & Choir', abbr: 'Choir', img: '/choir.jpg', desc: 'Orchestrating worship through traditional Anglican and contemporary African music.' },
-  { name: 'Deaf Ministry', abbr: 'Deaf', img: '/deaf.jpg', desc: 'Ensuring fully inclusive worship through dedicated sign language interpretation.' },
-]
+  { 
+    name: "Kenya Anglican Men's Association", 
+    abbr: 'KAMA', 
+    img: '/kama.jpg', 
+    desc: 'Men of integrity leading in faith, fellowship, and service to the Cathedral community.' 
+  },
+  { 
+    name: 'Mothers Union', 
+    abbr: 'MU', 
+    img: '/mothers.jpg', 
+    desc: 'Christian care for families, marriage enrichment, and compassionate community service.' 
+  },
+  { 
+    name: 'Youth & KAYO', 
+    abbr: 'KAYO', 
+    img: '/youth.jpg', 
+    desc: 'Empowering the next generation through fellowship, discipleship, and mentorship.' 
+  },
+  { 
+    name: 'Sunday School', 
+    abbr: 'SS', 
+    img: '/sunday-school.jpg', 
+    desc: 'Teaching biblical foundations to children in a safe, joyful, and nurturing environment.' 
+  },
+  { 
+    name: 'Music & Choir', 
+    abbr: 'Choir', 
+    img: '/choir.jpg', 
+    desc: 'Orchestrating worship through traditional Anglican and contemporary African music.' 
+  },
+  { 
+    name: 'Deaf Ministry', 
+    abbr: 'Deaf', 
+    img: '/deaf.jpg', 
+    desc: 'Ensuring fully inclusive worship through dedicated sign language interpretation.' 
+  },
+  { 
+    name: 'Widows Ministry', 
+    abbr: 'WM', 
+    img: '/faith.jpg', 
+    desc: 'Bridging faith, tradition, and healing through spiritual fortitude and a focus on mental wellness.' 
+  },
+];
 
 export const FOCUS: FocusItem[] = [
   { title: 'Mission & Evangelism', verse: 'Matthew 5:14', desc: 'Shining the light of Christ through outreach, digital evangelism, and mentorship.' },

@@ -6,11 +6,12 @@ import {
 	BookOpen,
 	Music,
 	Accessibility,
+	HeartHandshake
 } from 'lucide-react';
 import { SectionHeader } from './ui/SectionHeader';
 import { MINISTRIES } from '@/lib/data';
 
-const icons = [Shield, Heart, Users, BookOpen, Music, Accessibility];
+const icons = [Shield, Heart, Users, BookOpen, Music, Accessibility, HeartHandshake];
 
 export function Ministries() {
 	return (
