@@ -14,7 +14,7 @@ const icons = [Shield, Heart, Users, BookOpen, Music, Accessibility];
 
 export function Ministries() {
 	return (
-		<section className='section-pad bg-white'>
+		<section className='section-pad bg-ivory'>
 			<div className='container-main'>
 				<SectionHeader
 					label='Get Involved'
