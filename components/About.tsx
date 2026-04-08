@@ -40,13 +40,13 @@ export function About() {
 							proclaims Good News, heals communities, challenges
 							injustice, and safeguards creation.
 						</p>
-						<div className='grid grid-cols-2 gap-2'>
+						<div className='grid grid-cols-1 gap-2'>
 							{values.map((v, i) => (
 								<div
 									key={v}
 									className={`flex items-center gap-2.5 px-4 py-3 bg-white rounded-xl border border-parchment/60 shadow-sm ${i % 2 === 0 ? 'border-l-[3px] border-l-crimson' : 'border-l-[3px] border-l-royal'}`}
 								>
-									<span className='font-ui text-[9.5px] tracking-[1.5px] uppercase text-navy-mid font-semibold leading-tight'>
+									<span className='font-ui text-[12px] tracking-[1.5px] uppercase text-navy-mid font-semibold leading-tight'>
 										{v}
 									</span>
 								</div>
@@ -90,7 +90,7 @@ export function About() {
 												<div
 													className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${i % 2 === 0 ? 'bg-crimson' : 'bg-royal'}`}
 												/>
-												<div className='font-ui text-[10px] font-semibold text-navy-mid tracking-[1px]'>
+												<div className='font-ui text-[16px] font-semibold text-navy-mid tracking-[1px]'>
 													{f.title}
 												</div>
 											</div>
@@ -111,7 +111,7 @@ export function About() {
 				</div>
 
 				{/* Leadership */}
-				<div className='border-t border-parchment pt-16'>
+				<div className='pt-16'>
 					<SectionHeader
 						label='Our Clergy'
 						title='Cathedral Leadership'
@@ -119,50 +119,54 @@ export function About() {
 					/>
 
 					<div className='flex flex-wrap justify-center gap-6 max-w-7xl mx-auto'>
-    {LEADERSHIP.map((l, i) => (
-        <div
-            key={i}
-            className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:shadow-crimson/10 transition-all duration-300 hover:-translate-y-0.5 flex flex-col items-center text-center p-6 w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(25%-1.5rem)]"
-        >
-            {/* Enlarged Circular Image Section */}
-            <div className='relative w-32 h-32 mb-6 overflow-hidden rounded-full ring-4 ring-slate-50 shadow-inner'>
-                {l.img ? (
-                    <Image
-                        src={l.img}
-                        alt={l.name}
-                        fill
-                        className='object-cover object-top'
-                        sizes='128px'
-                    />
-                ) : (
-                    <div className='w-full h-full flex items-center justify-center bg-gradient-to-br from-royal-dark to-navy'>
-                        <Users
-                            size={36}
-                            className='text-gold/40'
-                        />
-                    </div>
-                )}
-            </div>
+						{LEADERSHIP.map((l, i) => (
+							<div
+								key={i}
+								className='bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:shadow-crimson/10 transition-all duration-300 hover:-translate-y-0.5 flex flex-col items-center text-center p-6 w-full sm:w-[calc(50%-1.5rem)] md:w-[calc(33.333%-1.5rem)] lg:w-[calc(25%-1.5rem)]'
+							>
+								{/* Enlarged Circular Image Section */}
+								<div className='relative w-32 h-32 mb-6 overflow-hidden rounded-full ring-4 ring-slate-50 shadow-inner'>
+									{l.img ? (
+										<Image
+											src={l.img}
+											alt={l.name}
+											fill
+											className='object-cover object-top'
+											sizes='128px'
+										/>
+									) : (
+										<div className='w-full h-full flex items-center justify-center bg-gradient-to-br from-royal-dark to-navy'>
+											<Users
+												size={36}
+												className='text-gold/40'
+											/>
+										</div>
+									)}
+								</div>
 
-            {/* Text Content - Exactly as requested */}
-            <div className='flex flex-col items-center'>
-                <p className={`font-ui text-[8px] tracking-[2px] uppercase mb-1.5 leading-tight ${i % 2 === 0 ? 'text-crimson' : 'text-royal'}`}>
-                    {l.role}
-                </p>
-                
-                <div className={`w-6 h-[2px] rounded-full mb-2 ${i % 2 === 0 ? 'bg-crimson' : 'bg-royal'}`} />
-                
-                <div className='font-display text-[0.95rem] font-medium text-navy-mid leading-snug mb-2 min-h-[2.5rem] flex items-center justify-center'>
-                    {l.name}
-                </div>
-                
-                <p className='font-body text-[0.72rem] text-muted leading-[1.8]'>
-                    {l.bio}
-                </p>
-            </div>
-        </div>
-    ))}
-</div>
+								{/* Text Content - Exactly as requested */}
+								<div className='flex flex-col items-center'>
+									<p
+										className={`font-ui text-[8px] tracking-[2px] uppercase mb-1.5 leading-tight ${i % 2 === 0 ? 'text-crimson' : 'text-royal'}`}
+									>
+										{l.role}
+									</p>
+
+									<div
+										className={`w-6 h-[2px] rounded-full mb-2 ${i % 2 === 0 ? 'bg-crimson' : 'bg-royal'}`}
+									/>
+
+									<div className='font-display text-[0.95rem] font-medium text-navy-mid leading-snug mb-2 min-h-[2.5rem] flex items-center justify-center'>
+										{l.name}
+									</div>
+
+									<p className='font-body text-[0.72rem] text-muted leading-[1.8]'>
+										{l.bio}
+									</p>
+								</div>
+							</div>
+						))}
+					</div>
 
 					{/* Community Banner */}
 					<div className='mt-6 relative h-56 sm:h-64 rounded-3xl overflow-hidden'>

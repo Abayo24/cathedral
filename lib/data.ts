@@ -120,31 +120,31 @@ export const MINISTRIES: Ministry[] = [
   { 
     name: "Kenya Anglican Men's Association", 
     abbr: 'KAMA', 
-    img: '/kama.jpg', 
+    img: '/kama_.jpg', 
     desc: 'Men of integrity leading in faith, fellowship, and service to the Cathedral community.' 
   },
   { 
     name: 'Mothers Union', 
     abbr: 'MU', 
-    img: '/mothers.jpg', 
+    img: '/mothers-union.jpg', 
     desc: 'Christian care for families, marriage enrichment, and compassionate community service.' 
   },
   { 
     name: 'Youth & KAYO', 
     abbr: 'KAYO', 
-    img: '/youth.jpg', 
+    img: '/youth_.jpg', 
     desc: 'Empowering the next generation through fellowship, discipleship, and mentorship.' 
   },
   { 
     name: 'Sunday School', 
     abbr: 'SS', 
-    img: '/sunday-school.jpg', 
+    img: '/sunday_school.jpg', 
     desc: 'Teaching biblical foundations to children in a safe, joyful, and nurturing environment.' 
   },
   { 
     name: 'Music & Choir', 
     abbr: 'Choir', 
-    img: '/choir.jpg', 
+    img: '/choir2.jpg', 
     desc: 'Orchestrating worship through traditional Anglican and contemporary African music.' 
   },
   { 
@@ -156,7 +156,7 @@ export const MINISTRIES: Ministry[] = [
   { 
     name: 'Widows Ministry', 
     abbr: 'WM', 
-    img: '/faith.jpg', 
+    img: '/1.jpeg',
     desc: 'Bridging faith, tradition, and healing through spiritual fortitude and a focus on mental wellness.' 
   },
 ];

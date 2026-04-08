@@ -62,7 +62,7 @@ const previews = [
         label: 'Stewardship',
         title: 'Give & Support',
         desc: 'Tithes, offerings, and development — M-Pesa and bank transfer available.',
-        img: '/offering.jpg',
+        img: '/give.jpg',
         icon: Heart,
         accent: 'royal' as const,
     },
@@ -100,7 +100,7 @@ export function HomePreview() {
                                 }`}
                             >
                                 {/* Image */}
-                                <div className='relative h-48 overflow-hidden rounded-t-3xl'>
+                                <div className='relative h-56 overflow-hidden rounded-t-3xl'>
                                     <Image
                                         src={img}
                                         alt={title}
