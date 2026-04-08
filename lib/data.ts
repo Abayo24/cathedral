@@ -150,7 +150,7 @@ export const MINISTRIES: Ministry[] = [
   { 
     name: 'Deaf Ministry', 
     abbr: 'Deaf', 
-    img: '/deaf.jpg', 
+    img: '/deaf-ministry.jpg', 
     desc: 'Ensuring fully inclusive worship through dedicated sign language interpretation.' 
   },
   { 

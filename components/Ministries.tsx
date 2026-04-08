@@ -5,13 +5,13 @@ import {
 	Users,
 	BookOpen,
 	Music,
-	Accessibility,
+	EarOff,
 	HeartHandshake
 } from 'lucide-react';
 import { SectionHeader } from './ui/SectionHeader';
 import { MINISTRIES } from '@/lib/data';
 
-const icons = [Shield, Heart, Users, BookOpen, Music, Accessibility, HeartHandshake];
+const icons = [Shield, Heart, Users, BookOpen, Music, EarOff, HeartHandshake];
 
 export function Ministries() {
 	return (
