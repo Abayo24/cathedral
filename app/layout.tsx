@@ -23,9 +23,22 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-	title: "ACK St. Stephen's Cathedral Kisumu",
-	description:
-		'A wholesome Christian ministry for the glory of God. Anglican Church of Kenya, Diocese of Maseno South.',
+  title: "St Stephens Cathedral Kisumu | Anglican Church Kenya Maseno South",
+  description:
+    "Official website of St Stephens Cathedral Kisumu (ACK). Find service times, church events, sermons, and community updates in Kisumu.",
+  keywords: [
+    "St Stephens Cathedral Kisumu",
+    "ACK Kisumu",
+    "Anglican Church Kisumu",
+    "churches in Kisumu",
+  ],
+  openGraph: {
+    title: "St Stephens Cathedral Kisumu",
+    description:
+      "A wholesome Christian ministry for the glory of God.",
+    url: "https://ststephenscathedralkisumu.org",
+    siteName: "St Stephens Cathedral Kisumu",
+  },
 };
 
 export default function RootLayout({
