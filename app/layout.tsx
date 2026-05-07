@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     "Anglican Church Kisumu",
     "churches in Kisumu",
   ],
+  icons: {
+    icon: "/icon.png",
+  },
   openGraph: {
     title: "St Stephens Cathedral Kisumu",
     description:
