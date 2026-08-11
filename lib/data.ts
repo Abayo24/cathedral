@@ -120,7 +120,7 @@ export const MINISTRIES: Ministry[] = [
   { 
     name: "Kenya Anglican Men's Association", 
     abbr: 'KAMA', 
-    img: '/kama_.jpg', 
+    img: '/Kama_.png', 
     desc: 'Men of integrity leading in faith, fellowship, and service to the Cathedral community.' 
   },
   { 
