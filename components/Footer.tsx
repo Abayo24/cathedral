@@ -136,7 +136,7 @@ export async function Footer() {
 							<li key={href}>
 								<Link
 									href={href}
-									className='block py-1.5 font-ui text-[13px] text-white/80 hover:text-gold-mid transition-colors no-underline'
+									className='block py-1.5 font-body text-sm text-white/80 hover:text-gold-mid transition-colors no-underline'
 								>
 									{label}
 								</Link>
@@ -151,7 +151,7 @@ export async function Footer() {
 					<p className='font-body text-xs text-white/65'>
 						© {new Date().getFullYear()} {s.name}. All rights reserved.
 					</p>
-					<Link href='/admin' className='font-ui text-xs text-white/50 hover:text-white/80 no-underline' prefetch={false}>
+					<Link href='/admin' className='font-body text-xs text-white/50 hover:text-white/80 no-underline' prefetch={false}>
 						Staff login
 					</Link>
 				</div>
