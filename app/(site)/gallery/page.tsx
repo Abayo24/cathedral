@@ -4,7 +4,7 @@ import { getAlbums } from '@/lib/content';
 import { pageMetadata } from '@/lib/seo';
 
 export const metadata = pageMetadata({
-	title: 'Photo Gallery',
+	title: 'Photo Gallery — Worship & Community in Kisumu',
 	description:
 		"Photos from worship, Holy Communion, ordinations, choirs, youth, Mothers Union and community life at ACK St. Stephen's Cathedral Kisumu.",
 	path: '/gallery',

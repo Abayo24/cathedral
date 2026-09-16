@@ -83,11 +83,48 @@ scripts/           seed + image optimisation
 
 ---
 
-## After launch: SEO checklist
+## Search visibility
 
-- [ ] Set `NEXT_PUBLIC_SITE_URL` to the live domain.
-- [ ] **Google Search Console:** verify the domain (or set `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`) and submit `/sitemap.xml`.
-- [ ] **Google Business Profile:** claim/update the Cathedral listing with the same name, phone and service times as the website — the biggest single factor for "church near me" searches.
-- [ ] In Site Settings, add the **street location** and **map pin** so maps, directions and structured data are precise.
-- [ ] Add YouTube / Instagram links in Site Settings if the Cathedral has them (used for `sameAs` in structured data).
-- [ ] Test with https://search.google.com/test/rich-results (home, `/visit`, an event page).
+### What the website already does
+
+- Unique title/description/canonical per page, sitemap, robots, `llms.txt` for AI assistants.
+- Structured data: `Church` + `Organization` (with address, phone, service opening hours, area served
+  and `sameAs` links to the Wikipedia/Wikidata entries for this Cathedral), `Event`, `FAQPage`, `BreadcrumbList`.
+- Fast, static pages — speed is a ranking factor, especially on mobile data.
+- Questions answered in plain language on `/visit`, which is what Google and AI assistants quote.
+
+### Which searches are realistic
+
+Aim at searches that bring people to *this* church:
+
+- "ACK St Stephen's Cathedral Kisumu", "St Stephens Cathedral Kisumu" — should be first; it's your name.
+- "Anglican church Kisumu", "ACK church Kisumu", "churches in Kisumu", "church service times Kisumu",
+  "Deaf church service Kisumu" — winnable with the steps below.
+
+Broad searches like "churches in Kenya" or "churches in Africa" are held by Wikipedia, news and
+directories. A single parish site will not rank there, and content written to chase those phrases
+reads as spam to both people and Google. Better to own Kisumu and the Cathedral's own name.
+
+### What still has to be done by a person (this matters more than the code)
+
+1. [ ] **Google Business Profile** — claim and verify the Cathedral at https://business.google.com.
+       This, not the website, decides who appears in the map pack for "church near me" and
+       "churches in Kisumu". Use exactly the same name, phone and address as this site, add service
+       times, photos, and ask members to leave reviews. Single highest-impact action.
+2. [ ] **Google Search Console** — verify the domain, submit `/sitemap.xml`, then check "Performance"
+       monthly to see the searches people actually use.
+3. [ ] **Street address and map pin** — add them in Site Settings. Wikipedia only records that the
+       *old* building stood on Omolo Agar Road, with coordinates rounded to about 2 km, so the exact
+       location has to come from you.
+4. [ ] **Links from other sites** — the strongest remaining factor. Ask for a link from
+       ackenya.org (the ACK national site), the Diocese of Maseno South, Riara/other partner
+       organisations, and local news covering Cathedral events. A handful of genuine links from
+       Kenyan church and news sites outweighs any amount of on-page tuning.
+5. [ ] **Keep the site active** — events, notices and bulletins posted regularly are a strong
+       freshness signal and give Google more pages to show.
+6. [ ] **Bing Webmaster Tools** — free, takes five minutes, feeds ChatGPT and Copilot answers.
+7. [ ] Add YouTube / Instagram links in Site Settings if they exist (used in `sameAs`).
+8. [ ] Test with https://search.google.com/test/rich-results (home, `/visit`, an event page).
+
+Expect branded searches to improve within days of Search Console verification, and competitive local
+searches to take one to three months, mostly depending on the Business Profile and links.

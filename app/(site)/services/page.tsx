@@ -5,7 +5,7 @@ import { getServiceSchedule } from '@/lib/content';
 import { pageMetadata } from '@/lib/seo';
 
 export const metadata = pageMetadata({
-	title: 'Sunday Service Times & Holy Communion Schedule',
+	title: 'Church Service Times in Kisumu — Sunday Worship & Holy Communion',
 	description:
 		"Service times at St. Stephen's Cathedral Kisumu: Sunday services at 7:00, 9:00 and 11:00 am, Youth 8:00 am, Deaf service 10:30 am, Teens and Sunday School, plus Wednesday mid-week services.",
 	path: '/services',

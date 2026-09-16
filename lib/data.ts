@@ -123,6 +123,8 @@ export const FAQS: Faq[] = [
 	{ question: 'How do I arrange a baptism, wedding or pastoral visit?', answer: 'Please contact the Cathedral office by phone on 0115 162 026 or email ststephenscathedral1@gmail.com, or send a message through our Contact page, and a member of the clergy will get back to you.' },
 	{ question: 'How do I join a ministry or fellowship?', answer: "Everyone is welcome to join a ministry — KAMA, Mothers Union, Youth & KAYO, Sunday School, Music & Choir, the Deaf Ministry or the Widows Ministry. Speak to the coordinating minister after a service or contact the Cathedral office." },
 	{ question: "Why is the Cathedral called \"Komulo\"?", answer: "St. Stephen's Cathedral was first built in 1913 by Anglican missionaries. It is known locally as \"Komulo\" in honour of its pioneer priest, Rev. Reuben Omulo, and today it is the seat of the Diocese of Maseno South." },
+	{ question: 'Which Anglican church can I attend in Kisumu?', answer: "ACK St. Stephen's Cathedral is the Anglican cathedral in Kisumu and the mother church of the Diocese of Maseno South. Visitors are welcome at any Sunday service — 7:00, 9:00 and 11:00 am in the Main Sanctuary, the 8:00 am Youth Service, or the 10:30 am Deaf Service in the Old Sanctuary." },
+	{ question: 'Is St. Stephen’s Cathedral part of the Anglican Church of Kenya (ACK)?', answer: "Yes. St. Stephen's Cathedral Kisumu is a parish of the Anglican Church of Kenya and is the cathedral church of the Diocese of Maseno South, which it has served since the diocese was formed. The Cathedral itself dates back to 1913." },
 ];
 
 export const FOCUS: FocusItem[] = [

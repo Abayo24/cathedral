@@ -4,7 +4,7 @@ import { getLeaders } from '@/lib/content';
 import { pageMetadata } from '@/lib/seo';
 
 export const metadata = pageMetadata({
-	title: 'About Us — History, Vision & Clergy',
+	title: 'About Our Anglican Church in Kisumu — History, Vision & Clergy',
 	description:
 		"The story of ACK St. Stephen's Cathedral Kisumu, known as \"Komulo\", built in 1913 and now seat of the Diocese of Maseno South. Our vision, mission, values and Cathedral clergy.",
 	path: '/about',

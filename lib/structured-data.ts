@@ -1,7 +1,57 @@
-import type { Album, EventOccurrence, Faq, SiteSettings } from './types';
+import type { Album, EventOccurrence, Faq, ServiceSchedule, SiteSettings } from './types';
 import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_URL } from './seo';
 
 const CHURCH_ID = `${SITE_URL}/#church`;
+
+/**
+ * Public references to this exact church. They tell search engines that the
+ * site and the known "St Stephen's Cathedral, Kisumu" entity are the same
+ * place, which is what earns the knowledge panel and map placement.
+ */
+const ENTITY_REFERENCES = [
+	"https://en.wikipedia.org/wiki/St_Stephen's_Cathedral,_Kisumu",
+	'https://www.wikidata.org/wiki/Q86752551',
+];
+
+const TIME_RANGE = /(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*(?:–|—|-|to)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)/gi;
+
+/** Turns "7:00 – 8:30 am" into { opens: '07:00', closes: '08:30' }. */
+function parseRanges(text: string) {
+	const ranges: { opens: string; closes: string }[] = [];
+	for (const match of Array.from(text.matchAll(TIME_RANGE))) {
+		const [, h1, m1 = '00', ap1, h2, m2 = '00', ap2] = match;
+		const to24 = (hour: string, meridiem?: string) => {
+			const period = (meridiem || ap2 || '').toLowerCase();
+			const n = Number(hour) % 12;
+			return String(period === 'pm' ? n + 12 : n).padStart(2, '0');
+		};
+		ranges.push({ opens: `${to24(h1, ap1)}:${m1}`, closes: `${to24(h2, ap2)}:${m2}` });
+	}
+	return ranges;
+}
+
+function openingHours(schedule: ServiceSchedule) {
+	const specs: { '@type': string; dayOfWeek: string; opens: string; closes: string }[] = [];
+
+	const sunday = [...schedule.adult, ...schedule.specialised].flatMap((s) => parseRanges(s.time));
+	if (sunday.length) {
+		specs.push({
+			'@type': 'OpeningHoursSpecification',
+			dayOfWeek: 'https://schema.org/Sunday',
+			opens: sunday.reduce((a, b) => (a.opens < b.opens ? a : b)).opens,
+			closes: sunday.reduce((a, b) => (a.closes > b.closes ? a : b)).closes,
+		});
+	}
+
+	for (const slot of schedule.communion) {
+		const day = /wednesday/i.test(slot.label) ? 'Wednesday' : null;
+		if (!day) continue;
+		for (const range of parseRanges(slot.time)) {
+			specs.push({ '@type': 'OpeningHoursSpecification', dayOfWeek: `https://schema.org/${day}`, ...range });
+		}
+	}
+	return specs;
+}
 
 function postalAddress(s: SiteSettings) {
 	return {
@@ -21,8 +71,9 @@ export function mapUrl(s: SiteSettings) {
 		: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(s.mapQuery)}`;
 }
 
-export function churchJsonLd(s: SiteSettings) {
-	const sameAs = Object.values(s.social).filter(Boolean);
+export function churchJsonLd(s: SiteSettings, schedule?: ServiceSchedule) {
+	const sameAs = [...Object.values(s.social).filter(Boolean), ...ENTITY_REFERENCES];
+	const hours = schedule ? openingHours(schedule) : [];
 	return {
 		'@context': 'https://schema.org',
 		'@graph': [
@@ -44,6 +95,12 @@ export function churchJsonLd(s: SiteSettings) {
 				hasMap: mapUrl(s),
 				isAccessibleForFree: true,
 				publicAccess: true,
+				...(hours.length ? { openingHoursSpecification: hours } : {}),
+				areaServed: [
+					{ '@type': 'City', name: s.address.locality },
+					{ '@type': 'AdministrativeArea', name: s.address.region },
+				],
+				containedInPlace: { '@type': 'City', name: s.address.locality, address: { '@type': 'PostalAddress', addressCountry: 'KE' } },
 				parentOrganization: { '@type': 'Organization', name: 'Anglican Church of Kenya — Diocese of Maseno South' },
 				...(sameAs.length ? { sameAs } : {}),
 			},

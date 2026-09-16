@@ -3,11 +3,15 @@ import { AnnouncementBanner } from '@/components/AnnouncementBanner';
 import { Footer } from '@/components/Footer';
 import { Navigation } from '@/components/Navigation';
 import { JsonLd } from '@/components/ui/JsonLd';
-import { getAnnouncements, getSiteSettings } from '@/lib/content';
+import { getAnnouncements, getServiceSchedule, getSiteSettings } from '@/lib/content';
 import { churchJsonLd } from '@/lib/structured-data';
 
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
-	const [settings, announcements] = await Promise.all([getSiteSettings(), getAnnouncements()]);
+	const [settings, announcements, schedule] = await Promise.all([
+		getSiteSettings(),
+		getAnnouncements(),
+		getServiceSchedule(),
+	]);
 	const banner = announcements.find((a) => a.showBanner);
 
 	return (
@@ -23,7 +27,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
 				{children}
 			</main>
 			<Footer />
-			<JsonLd data={churchJsonLd(settings)} />
+			<JsonLd data={churchJsonLd(settings, schedule)} />
 		</>
 	);
 }
