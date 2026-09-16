@@ -37,6 +37,8 @@ export interface SiteSettings {
 		country: string;
 	};
 	officeHours?: string;
+	/** Google Plus Code, the most reliable way to navigate to the Cathedral. */
+	plusCode?: string;
 	mapQuery: string;
 	geo?: { lat: number; lng: number };
 	social: SocialLinks;

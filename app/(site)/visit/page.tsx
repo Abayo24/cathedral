@@ -84,6 +84,25 @@ export default async function VisitPage() {
 									{settings.address.poBox} – {settings.address.postalCode}, {settings.address.locality}, Kenya
 								</span>
 							</p>
+							{settings.plusCode && (
+								<p className='flex gap-3'>
+									<Navigation2 size={18} className='text-crimson mt-1 flex-shrink-0' aria-hidden />
+									<span>
+										Plus Code:{' '}
+										<a
+											href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${settings.plusCode} ${settings.address.locality}`)}`}
+											target='_blank'
+											rel='noopener noreferrer'
+											className='font-mono font-semibold text-royal hover:text-crimson'
+										>
+											{settings.plusCode}
+										</a>
+										<span className='block text-sm text-faint'>
+											Type this into Google Maps to navigate straight to the Cathedral.
+										</span>
+									</span>
+								</p>
+							)}
 							<p className='flex gap-3'>
 								<Phone size={18} className='text-crimson mt-1 flex-shrink-0' aria-hidden />
 								<a href={`tel:${settings.phoneIntl}`} className='text-royal hover:text-crimson'>

@@ -79,6 +79,7 @@ export const getSiteSettings = cache(async (): Promise<SiteSettings> => {
 			country: 'KE',
 		},
 		officeHours: raw.officeHours || undefined,
+		plusCode: raw.plusCode || SETTINGS.plusCode,
 		mapQuery: pick(raw.mapQuery, SETTINGS.mapQuery),
 		geo: raw.geo?.lat && raw.geo?.lng ? { lat: raw.geo.lat, lng: raw.geo.lng } : undefined,
 		social: {

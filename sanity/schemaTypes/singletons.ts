@@ -29,6 +29,13 @@ export const siteSettings = defineType({
     defineField({ name: 'whatsapp', title: 'WhatsApp number', type: 'string', group: 'contact', description: 'International format, e.g. +254115162026' }),
     defineField({ name: 'emails', type: 'array', of: [defineArrayMember({ type: 'string' })], group: 'contact' }),
     defineField({ name: 'street', title: 'Street / physical location', type: 'string', group: 'contact' }),
+    defineField({
+      name: 'plusCode',
+      title: 'Google Plus Code',
+      description: 'e.g. VQR3+QM3 — visitors can type this into Google Maps to navigate straight here.',
+      type: 'string',
+      group: 'contact',
+    }),
     defineField({ name: 'poBox', title: 'P.O. Box', type: 'string', group: 'contact' }),
     defineField({ name: 'locality', title: 'Town', type: 'string', group: 'contact' }),
     defineField({ name: 'region', title: 'County', type: 'string', group: 'contact' }),

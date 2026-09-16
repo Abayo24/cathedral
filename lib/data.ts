@@ -29,16 +29,17 @@ export const SETTINGS: SiteSettings = {
 	phoneIntl: '+254115162026',
 	emails: ['ststephenscathedral1@gmail.com', 'ststephenskisumu@yahoo.com'],
 	address: {
-		street: 'Omolo Agar Road',
+		street: 'Got Huma Road, Kondele',
 		poBox: 'P.O. Box 43',
 		locality: 'Kisumu',
 		region: 'Kisumu County',
 		postalCode: '40100',
 		country: 'KE',
 	},
-	mapQuery: "ACK St. Stephen's Cathedral, Omolo Agar Road, Kisumu, Kenya",
-	// Verified against OpenStreetMap (opposite the Nyanza Police HQ, near Hotel Palmers).
-	geo: { lat: -0.1049673, lng: 34.7575454 },
+	plusCode: 'VQR3+QM3',
+	mapQuery: "St. Stephen's Cathedral, VQR3+QM3, Got Huma Road, Kisumu, Kenya",
+	// Plus Code VQR3+QM3 (full: 6GFPVQR3+QM3), supplied by the Cathedral.
+	geo: { lat: -0.1081125, lng: 34.7541719 },
 	social: {
 		facebook: 'https://www.facebook.com/ststephenscathedralksm',
 	},

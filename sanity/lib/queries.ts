@@ -6,7 +6,7 @@ const img = (field: string) =>
 
 export const settingsQuery = groq`*[_id == "siteSettings"][0]{
   name, shortName, tagline, description, phone, whatsapp, emails,
-  street, poBox, locality, region, postalCode, officeHours, mapQuery, geo,
+  street, plusCode, poBox, locality, region, postalCode, officeHours, mapQuery, geo,
   facebook, youtube, instagram, x, tiktok, livestreamUrl, paybill,
   heroEyebrow, heroTitleLine1, heroTitleLine2, heroText, ${img('heroImage')}
 }`
