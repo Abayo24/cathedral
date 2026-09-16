@@ -127,14 +127,14 @@ export function EventCalendar({ items, todayKey, categories, minKey, maxKey }: P
 
 				{categories.length > 1 && (
 					<div className='flex items-center gap-2 mb-4 px-1'>
-						<label htmlFor='event-category' className='font-ui text-sm text-muted'>
+						<label htmlFor='event-category' className='font-ui text-[11px] tracking-[2px] uppercase text-muted'>
 							Show
 						</label>
 						<select
 							id='event-category'
 							value={category}
 							onChange={(e) => setCategory(e.target.value)}
-							className='font-ui text-sm border border-parchment rounded-full px-3 py-1.5 bg-cream text-navy-mid'
+							className='font-body text-sm border border-parchment rounded-full px-3 py-1.5 bg-cream text-navy-mid'
 						>
 							<option value='all'>All events</option>
 							{categories.map((c) => (
@@ -194,7 +194,7 @@ export function EventCalendar({ items, todayKey, categories, minKey, maxKey }: P
 												}`}
 											>
 												<span
-													className={`font-ui text-xs sm:text-sm font-semibold inline-flex w-6 h-6 items-center justify-center rounded-full ${
+													className={`font-ui text-xs sm:text-sm font-semibold tabular-nums inline-flex w-6 h-6 items-center justify-center rounded-full ${
 														isToday && !isSelected ? 'bg-crimson text-white' : ''
 													}`}
 												>

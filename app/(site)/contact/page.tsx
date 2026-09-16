@@ -58,7 +58,7 @@ export default async function ContactPage() {
 							))}
 						</ul>
 						{s.officeHours && (
-							<p className='mt-5 flex items-center gap-2 font-ui text-sm text-muted'>
+							<p className='mt-5 flex items-center gap-2 font-body text-sm text-muted'>
 								<Clock size={15} aria-hidden /> Office hours: {s.officeHours}
 							</p>
 						)}

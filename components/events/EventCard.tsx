@@ -39,12 +39,12 @@ export function EventCard({ occurrence, headingLevel = 'h3' }: { occurrence: Eve
 						{e.title}
 					</Link>
 				</Heading>
-				<p className='font-ui text-sm text-muted flex items-start gap-1.5'>
+				<p className='font-body text-sm text-muted flex items-start gap-1.5'>
 					<Clock size={14} aria-hidden className='text-royal mt-0.5 flex-shrink-0' />
 					{formatMediumDate(occurrence.start)} · {formatTimeRange(occurrence.start, occurrence.end, e.allDay)}
 				</p>
 				{e.location && (
-					<p className='font-ui text-sm text-muted flex items-center gap-1.5 mt-1'>
+					<p className='font-body text-sm text-muted flex items-center gap-1.5 mt-1'>
 						<MapPin size={14} aria-hidden className='text-royal flex-shrink-0' />
 						{e.location}
 					</p>

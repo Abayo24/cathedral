@@ -65,7 +65,7 @@ export function About({ leaders }: { leaders: Leader[] }) {
 										<div className='flex items-start justify-between gap-3 mb-1'>
 											<div className='flex items-center gap-2 min-w-0'>
 												<span aria-hidden className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${i % 2 === 0 ? 'bg-crimson' : 'bg-royal'}`} />
-												<h4 className='font-ui text-base font-semibold text-navy-mid'>{f.title}</h4>
+												<h4 className='font-display text-xl font-medium text-navy-mid'>{f.title}</h4>
 											</div>
 											<span className={`font-display text-base italic flex-shrink-0 ${i % 2 === 0 ? 'text-crimson' : 'text-royal'}`}>
 												{f.verse}

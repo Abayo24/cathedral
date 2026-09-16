@@ -148,7 +148,7 @@ export async function Footer() {
 
 			<div className='border-t border-white/10 px-4 sm:px-6 py-5'>
 				<div className='container-main flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2'>
-					<p className='font-ui text-xs text-white/65'>
+					<p className='font-body text-xs text-white/65'>
 						© {new Date().getFullYear()} {s.name}. All rights reserved.
 					</p>
 					<Link href='/admin' className='font-ui text-xs text-white/50 hover:text-white/80 no-underline' prefetch={false}>

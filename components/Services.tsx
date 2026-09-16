@@ -67,7 +67,7 @@ export function Services({ schedule }: { schedule: ServiceSchedule }) {
 							<li key={c.label} className='bg-white/10 rounded-xl p-4'>
 								<h4 className='font-ui text-[11px] tracking-[2px] uppercase text-white/90 font-semibold mb-1.5'>{c.label}</h4>
 								<p className='font-display text-lg text-white font-normal mb-1 leading-snug'>{c.time}</p>
-								{c.venue && <p className='font-ui text-xs text-white/80'>{c.venue}</p>}
+								{c.venue && <p className='font-body text-sm text-white/80'>{c.venue}</p>}
 							</li>
 						))}
 					</ul>

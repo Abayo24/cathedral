@@ -60,13 +60,13 @@ export default async function EventPage({ params }: { params: { slug: string } }
 				<div className='container-main grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10 lg:gap-14 items-start'>
 					<div className='min-w-0 order-2 lg:order-1'>
 						{event.cancelled && (
-							<div role='status' className='mb-6 rounded-2xl bg-crimson text-white p-5 font-ui'>
+							<div role='status' className='mb-6 rounded-2xl bg-crimson text-white p-5 font-body'>
 								<strong>This event has been cancelled.</strong>
 								{event.contact ? ` For details contact ${event.contact}.` : ''}
 							</div>
 						)}
 						{isPast && !event.cancelled && (
-							<div role='status' className='mb-6 rounded-2xl bg-ivory border border-parchment p-5 font-ui text-muted'>
+							<div role='status' className='mb-6 rounded-2xl bg-ivory border border-parchment p-5 font-body text-muted'>
 								This event has already taken place.{' '}
 								<Link href='/events' className='text-royal underline underline-offset-4'>
 									See upcoming events
@@ -89,7 +89,7 @@ export default async function EventPage({ params }: { params: { slug: string } }
 								<h2 className='font-display text-2xl text-navy-mid mb-4'>Following dates</h2>
 								<ul className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
 									{laterDates.map((o) => (
-										<li key={o.key} className='font-ui text-sm bg-white border border-parchment/70 rounded-xl px-4 py-3 text-navy-mid'>
+										<li key={o.key} className='font-body text-sm bg-white border border-parchment/70 rounded-xl px-4 py-3 text-navy-mid'>
 											{formatLongDate(o.start)}
 										</li>
 									))}
@@ -104,7 +104,7 @@ export default async function EventPage({ params }: { params: { slug: string } }
 
 					<aside className='order-1 lg:order-2 lg:sticky lg:top-24 bg-white rounded-3xl border border-parchment/70 shadow-sm p-6 sm:p-7'>
 						<h2 className='label-tag'>Event details</h2>
-						<dl className='space-y-4 font-ui text-[15px] text-navy-mid'>
+						<dl className='space-y-4 font-body text-base text-navy-mid'>
 							{occurrence && (
 								<div className='flex gap-3'>
 									<dt className='sr-only'>When</dt>

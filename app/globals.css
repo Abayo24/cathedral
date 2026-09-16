@@ -11,7 +11,24 @@
 	body {
 		@apply bg-cream text-navy;
 		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-optical-sizing: auto;
 		overflow-x: clip;
+	}
+
+	::selection {
+		@apply bg-crimson text-white;
+	}
+
+	/* Avoid a single orphaned word on display headings */
+	h1,
+	h2,
+	h3,
+	h4 {
+		text-wrap: balance;
+	}
+	p {
+		text-wrap: pretty;
 	}
 
 	:focus-visible {

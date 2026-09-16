@@ -40,7 +40,7 @@ export function Ministries({ ministries }: { ministries: Ministry[] }) {
 									<h3 className='font-display text-2xl font-medium text-white mb-1.5 leading-tight'>{m.name}</h3>
 									<p className='font-body text-sm text-white/85 leading-6'>{m.description}</p>
 									{(m.meets || m.contact) && (
-										<p className='font-ui text-xs text-white/80 mt-3 space-y-0.5'>
+										<p className='font-body text-sm text-white/80 mt-3 space-y-0.5'>
 											{m.meets && <span className='block'>Meets: {m.meets}</span>}
 											{m.contact && <span className='block'>Contact: {m.contact}</span>}
 										</p>

@@ -70,18 +70,18 @@ export function ContactForm() {
 	return (
 		<form onSubmit={onSubmit} noValidate className='rounded-3xl bg-white border border-parchment/70 p-6 sm:p-8 space-y-5'>
 			{result && !result.ok && (
-				<div ref={errorRef} tabIndex={-1} role='alert' className='rounded-xl bg-crimson-light border border-crimson/30 p-4 font-ui text-sm text-crimson-dark outline-none'>
+				<div ref={errorRef} tabIndex={-1} role='alert' className='rounded-xl bg-crimson-light border border-crimson/30 p-4 font-body text-sm text-crimson-dark outline-none'>
 					{result.error}
 				</div>
 			)}
 
 			<fieldset>
-				<legend className='font-ui text-sm font-semibold text-navy-mid mb-2'>What can we help with?</legend>
+				<legend className='font-ui text-[11px] tracking-[2px] uppercase font-semibold text-navy-mid mb-3'>What can we help with?</legend>
 				<div className='grid grid-cols-1 sm:grid-cols-2 gap-2'>
 					{KINDS.map((k) => (
 						<label
 							key={k.value}
-							className={`flex items-center gap-2.5 rounded-xl border px-4 py-3 cursor-pointer font-ui text-sm transition-colors ${
+							className={`flex items-center gap-2.5 rounded-xl border px-4 py-3 cursor-pointer font-body text-sm transition-colors ${
 								kind === k.value ? 'border-royal bg-royal-light text-royal-dark' : 'border-parchment hover:border-royal/50'
 							}`}
 						>
@@ -100,7 +100,7 @@ export function ContactForm() {
 			</fieldset>
 
 			<div>
-				<label htmlFor='contact-name' className='block font-ui text-sm font-semibold text-navy-mid mb-1.5'>
+				<label htmlFor='contact-name' className='block font-ui text-[11px] tracking-[2px] uppercase font-semibold text-navy-mid mb-2'>
 					Your name
 				</label>
 				<input
@@ -114,7 +114,7 @@ export function ContactForm() {
 					aria-describedby={fieldErrors.name ? 'name-error' : undefined}
 				/>
 				{fieldErrors.name && (
-					<p id='name-error' className='font-ui text-sm text-crimson mt-1.5'>
+					<p id='name-error' className='font-body text-sm text-crimson mt-1.5'>
 						{fieldErrors.name}
 					</p>
 				)}
@@ -122,7 +122,7 @@ export function ContactForm() {
 
 			<div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
 				<div>
-					<label htmlFor='contact-email' className='block font-ui text-sm font-semibold text-navy-mid mb-1.5'>
+					<label htmlFor='contact-email' className='block font-ui text-[11px] tracking-[2px] uppercase font-semibold text-navy-mid mb-2'>
 						Email
 					</label>
 					<input
@@ -137,7 +137,7 @@ export function ContactForm() {
 					/>
 				</div>
 				<div>
-					<label htmlFor='contact-phone' className='block font-ui text-sm font-semibold text-navy-mid mb-1.5'>
+					<label htmlFor='contact-phone' className='block font-ui text-[11px] tracking-[2px] uppercase font-semibold text-navy-mid mb-2'>
 						Phone
 					</label>
 					<input
@@ -151,13 +151,13 @@ export function ContactForm() {
 						aria-describedby='contact-hint'
 					/>
 				</div>
-				<p id='contact-hint' className={`sm:col-span-2 font-ui text-sm -mt-2 ${fieldErrors.contact ? 'text-crimson' : 'text-muted'}`}>
+				<p id='contact-hint' className={`sm:col-span-2 font-body text-sm -mt-2 ${fieldErrors.contact ? 'text-crimson' : 'text-muted'}`}>
 					{fieldErrors.contact ?? 'Give at least one so we can reply.'}
 				</p>
 			</div>
 
 			<div>
-				<label htmlFor='contact-message' className='block font-ui text-sm font-semibold text-navy-mid mb-1.5'>
+				<label htmlFor='contact-message' className='block font-ui text-[11px] tracking-[2px] uppercase font-semibold text-navy-mid mb-2'>
 					{kind === 'prayer' ? 'Your prayer request' : 'Message'}
 				</label>
 				<textarea
@@ -171,14 +171,14 @@ export function ContactForm() {
 					aria-describedby={fieldErrors.message ? 'message-error' : undefined}
 				/>
 				{fieldErrors.message && (
-					<p id='message-error' className='font-ui text-sm text-crimson mt-1.5'>
+					<p id='message-error' className='font-body text-sm text-crimson mt-1.5'>
 						{fieldErrors.message}
 					</p>
 				)}
 			</div>
 
 			{pastoral && (
-				<label className='flex items-start gap-3 font-ui text-sm text-navy-mid cursor-pointer'>
+				<label className='flex items-start gap-3 font-body text-sm text-navy-mid cursor-pointer'>
 					<input type='checkbox' name='confidential' className='mt-1 accent-royal w-4 h-4' />
 					<span>Keep this confidential — share only with the clergy.</span>
 				</label>
@@ -193,7 +193,7 @@ export function ContactForm() {
 			<button type='submit' disabled={pending} className='btn-crimson w-full sm:w-auto disabled:opacity-60 disabled:pointer-events-none'>
 				<Send size={14} aria-hidden /> {pending ? 'Sending…' : 'Send message'}
 			</button>
-			<p className='font-ui text-xs text-muted'>Your details are only seen by Cathedral staff and are never shared.</p>
+			<p className='font-body text-xs text-muted'>Your details are only seen by Cathedral staff and are never shared.</p>
 		</form>
 	);
 }

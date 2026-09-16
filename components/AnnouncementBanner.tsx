@@ -38,7 +38,7 @@ export function AnnouncementBanner({ id, title, link, linkLabel }: Props) {
 		<div role='region' aria-label='Important notice' className='bg-crimson text-white'>
 			<div className='container-main flex items-center gap-3 px-4 py-2.5'>
 				<Megaphone size={16} aria-hidden className='flex-shrink-0' />
-				<p className='font-ui text-sm leading-snug flex-1 min-w-0'>
+				<p className='font-body text-sm leading-snug flex-1 min-w-0'>
 					<span className='font-semibold'>{title}</span>
 					{link && (
 						<>

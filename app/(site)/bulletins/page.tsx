@@ -47,7 +47,7 @@ export default async function BulletinsPage() {
 													)}
 													{a.title}
 												</h3>
-												<time dateTime={a.publishedAt} className='font-ui text-xs text-faint whitespace-nowrap mt-2'>
+												<time dateTime={a.publishedAt} className='font-body text-xs text-faint whitespace-nowrap mt-2'>
 													{formatShortDate(a.publishedAt)}
 												</time>
 											</div>
@@ -85,7 +85,7 @@ export default async function BulletinsPage() {
 											<div>
 												{i === 0 && <p className='label-tag !mb-1.5'>Latest</p>}
 												<h3 className='font-display text-2xl text-navy-mid leading-snug'>{b.title}</h3>
-												<p className='font-ui text-sm text-muted mt-1'>
+												<p className='font-body text-sm text-muted mt-1'>
 													<time dateTime={b.date}>{formatDayKey(b.date, 'long')}</time>
 												</p>
 											</div>

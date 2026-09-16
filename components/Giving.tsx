@@ -98,7 +98,7 @@ export function Giving({ accounts, paybill }: { accounts: GivingAccount[]; paybi
 									<p className='font-display text-4xl sm:text-5xl font-light text-white tracking-[0.05em]'>{paybill}</p>
 									<CopyButton value={paybill} label='paybill number' />
 								</div>
-								<p className='font-ui text-sm text-white/85 mt-2'>
+								<p className='font-body text-sm text-white/85 mt-2'>
 									Account: <span className='text-gold-mid font-semibold'>{acc.paybill}</span>
 								</p>
 							</div>
