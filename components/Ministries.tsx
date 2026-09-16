@@ -1,65 +1,60 @@
-import Image from 'next/image';
-import {
-	Shield,
-	Heart,
-	Users,
-	BookOpen,
-	Music,
-	EarOff,
-	HeartHandshake
-} from 'lucide-react';
+import Link from 'next/link';
+import { BookOpen, EarOff, Heart, HeartHandshake, Music, Shield, Users } from 'lucide-react';
+import { CmsImage } from './ui/CmsImage';
 import { SectionHeader } from './ui/SectionHeader';
-import { MINISTRIES } from '@/lib/data';
+import type { Ministry } from '@/lib/types';
 
 const icons = [Shield, Heart, Users, BookOpen, Music, EarOff, HeartHandshake];
 
-export function Ministries() {
+export function Ministries({ ministries }: { ministries: Ministry[] }) {
 	return (
-		<section className='section-pad bg-ivory'>
+		<section className='section-pad bg-ivory' aria-labelledby='ministries-heading'>
 			<div className='container-main'>
 				<SectionHeader
+					id='ministries-heading'
 					label='Get Involved'
 					title='Our Ministries & Fellowships'
 					subtitle='Find your place to serve, grow, and connect within the Cathedral family.'
 					centered
 				/>
-				<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
-					{MINISTRIES.map((m, i) => {
-						const Icon = icons[i];
+				<ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+					{ministries.map((m, i) => {
+						const Icon = icons[i % icons.length];
 						return (
-							<div
-								key={i}
-								className='relative h-72 sm:h-80 overflow-hidden rounded-3xl group cursor-pointer shadow-md hover:shadow-xl hover:shadow-navy/15 transition-all duration-300 hover:-translate-y-1'
-							>
-								<Image
-									src={m.img}
-									alt={m.name}
+							<li key={m.name} className='relative min-h-[20rem] overflow-hidden rounded-3xl group shadow-md flex flex-col justify-end'>
+								<CmsImage
+									image={m.image}
+									alt=''
 									fill
 									className='object-cover transition-transform duration-700 group-hover:scale-105'
 									sizes='(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw'
 								/>
-								<div className='absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/60 to-black/20' />
+								<div className='absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-black/10' />
 								<div
 									className={`absolute top-4 left-4 w-10 h-10 rounded-full flex items-center justify-center z-10 shadow-md ${i % 2 === 0 ? 'bg-crimson' : 'bg-royal'}`}
 								>
-									<Icon size={17} className='text-white' />
+									<Icon size={17} className='text-white' aria-hidden />
 								</div>
-								<div className='absolute bottom-0 left-0 p-5 sm:p-6 z-10'>
-									<div
-										className={`font-ui text-[8px] tracking-[3px] uppercase mb-1.5 ${i % 2 === 0 ? 'text-red-300' : 'text-blue-300'}`}
-									>
-										{m.abbr}
-									</div>
-									<div className='font-display text-xl sm:text-2xl font-medium text-white mb-1.5 leading-tight'>
-										{m.name}
-									</div>
-									<p className='font-body text-[0.78rem] text-white/65 leading-[1.7]'>
-										{m.desc}
-									</p>
+								<div className='relative p-5 sm:p-6 z-10'>
+									{m.abbr && <p className='font-ui text-[11px] tracking-[2.5px] uppercase mb-1.5 text-gold-mid font-semibold'>{m.abbr}</p>}
+									<h3 className='font-display text-2xl font-medium text-white mb-1.5 leading-tight'>{m.name}</h3>
+									<p className='font-body text-sm text-white/85 leading-6'>{m.description}</p>
+									{(m.meets || m.contact) && (
+										<p className='font-ui text-xs text-white/80 mt-3 space-y-0.5'>
+											{m.meets && <span className='block'>Meets: {m.meets}</span>}
+											{m.contact && <span className='block'>Contact: {m.contact}</span>}
+										</p>
+									)}
 								</div>
-							</div>
+							</li>
 						);
 					})}
+				</ul>
+				<div className='mt-12 text-center'>
+					<p className='font-body text-muted mb-4'>Would you like to join a ministry or fellowship?</p>
+					<Link href='/contact' className='btn-crimson'>
+						Get in touch
+					</Link>
 				</div>
 			</div>
 		</section>

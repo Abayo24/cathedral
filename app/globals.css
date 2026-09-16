@@ -5,16 +5,23 @@
 @layer base {
 	html {
 		scroll-behavior: smooth;
-		overflow-x: hidden;
+		/* `clip` (unlike `hidden`) doesn't break the sticky navigation */
+		overflow-x: clip;
 	}
 	body {
 		@apply bg-cream text-navy;
 		-webkit-font-smoothing: antialiased;
-		overflow-x: hidden;
+		overflow-x: clip;
+	}
+
+	:focus-visible {
+		outline: 3px solid #1a56a0;
+		outline-offset: 3px;
+		border-radius: 4px;
 	}
 
 	::-webkit-scrollbar {
-		width: 5px;
+		width: 6px;
 	}
 	::-webkit-scrollbar-track {
 		@apply bg-ivory;
@@ -22,11 +29,31 @@
 	::-webkit-scrollbar-thumb {
 		@apply bg-crimson rounded-full;
 	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
 }
 
 @layer components {
+	.skip-link {
+		@apply absolute left-4 -top-20 z-[100] bg-navy text-white font-ui text-sm font-semibold px-5 py-3 rounded-full shadow-lg transition-[top];
+	}
+	.skip-link:focus {
+		@apply top-4;
+	}
+
 	.section-pad {
-		@apply py-20 px-4 sm:px-6 md:px-8;
+		@apply py-16 sm:py-20 px-4 sm:px-6 md:px-8;
 	}
 	.container-main {
 		@apply max-w-7xl mx-auto w-full;
@@ -39,57 +66,41 @@
 	}
 
 	.label-tag {
-		@apply font-ui text-[10px] tracking-[4px] uppercase font-semibold text-crimson mb-3;
+		@apply font-ui text-[11px] tracking-[3px] uppercase font-semibold text-crimson mb-3;
 	}
 	.label-tag-light {
-		@apply font-ui text-[10px] tracking-[4px] uppercase font-semibold text-gold-mid mb-3;
+		@apply font-ui text-[11px] tracking-[3px] uppercase font-semibold text-gold-mid mb-3;
 	}
 	.label-tag-royal {
-		@apply font-ui text-[10px] tracking-[4px] uppercase font-semibold text-royal-light mb-3;
+		@apply font-ui text-[11px] tracking-[3px] uppercase font-semibold text-gold-mid mb-3;
 	}
 
 	.section-title {
 		@apply font-display text-4xl md:text-5xl font-normal leading-tight -tracking-[0.01em] text-navy-mid mb-5;
 	}
-	.section-title-light {
-		@apply font-display text-4xl md:text-5xl font-normal leading-tight -tracking-[0.01em] text-white mb-5;
-	}
-	.section-title-centered {
-		@apply font-display text-4xl md:text-5xl font-normal leading-tight -tracking-[0.01em] text-navy-mid mb-5 text-center;
-	}
 
 	.btn-crimson {
-		@apply bg-crimson hover:bg-crimson-dark text-white font-ui text-[10px] tracking-[3px] uppercase
+		@apply inline-flex items-center justify-center gap-2 bg-crimson hover:bg-crimson-dark text-white font-ui text-[11px] tracking-[2.5px] uppercase
            font-semibold py-3.5 px-8 rounded-full transition-all duration-200 cursor-pointer
-           shadow-md shadow-crimson/20 hover:shadow-lg hover:shadow-crimson/30 hover:-translate-y-px;
+           shadow-md shadow-crimson/20 hover:shadow-lg hover:shadow-crimson/30 hover:-translate-y-px no-underline;
 	}
 	.btn-royal {
-		@apply bg-royal hover:bg-royal-dark text-white font-ui text-[10px] tracking-[3px] uppercase
+		@apply inline-flex items-center justify-center gap-2 bg-royal hover:bg-royal-dark text-white font-ui text-[11px] tracking-[2.5px] uppercase
            font-semibold py-3.5 px-8 rounded-full transition-all duration-200 cursor-pointer
-           shadow-md shadow-royal/20 hover:shadow-lg hover:shadow-royal/30 hover:-translate-y-px;
+           shadow-md shadow-royal/20 hover:shadow-lg hover:shadow-royal/30 hover:-translate-y-px no-underline;
+	}
+	.btn-outline {
+		@apply inline-flex items-center justify-center gap-2 border border-parchment bg-white text-navy-mid hover:border-royal hover:text-royal font-ui text-[11px]
+           tracking-[2.5px] uppercase font-semibold py-3 px-6 rounded-full transition-all duration-200 cursor-pointer no-underline;
 	}
 	.btn-outline-white {
-		@apply border border-white/70 text-white hover:bg-white hover:text-navy-mid font-ui text-[10px]
-           tracking-[3px] uppercase font-semibold py-3.5 px-8 rounded-full transition-all duration-200
-           cursor-pointer bg-transparent hover:shadow-md hover:-translate-y-px;
+		@apply inline-flex items-center justify-center gap-2 border border-white/70 text-white hover:bg-white hover:text-navy-mid font-ui text-[11px]
+           tracking-[2.5px] uppercase font-semibold py-3.5 px-8 rounded-full transition-all duration-200
+           cursor-pointer bg-transparent hover:shadow-md hover:-translate-y-px no-underline;
 	}
 
-	.img-zoom {
-		@apply overflow-hidden;
-	}
-	.img-zoom img {
-		@apply transition-transform duration-700 ease-out;
-	}
-	.img-zoom:hover img {
-		@apply scale-105;
-	}
-
-	/* Cards get a soft top accent via a coloured dot/pill instead of a hard border */
-	.card-accent-crimson {
-		@apply border-t-2 border-t-crimson/60;
-	}
-	.card-accent-royal {
-		@apply border-t-2 border-t-royal/60;
+	.chip {
+		@apply inline-flex items-center font-ui text-[11px] tracking-[1.5px] uppercase px-3 py-1 rounded-full;
 	}
 
 	.no-scrollbar {
@@ -97,5 +108,31 @@
 	}
 	.no-scrollbar::-webkit-scrollbar {
 		display: none;
+	}
+
+	/* Rich text from the CMS */
+	.prose-church {
+		@apply font-body text-base leading-8 text-muted;
+	}
+	.prose-church p {
+		@apply mb-5;
+	}
+	.prose-church h3 {
+		@apply font-display text-2xl text-navy-mid mt-8 mb-3;
+	}
+	.prose-church ul {
+		@apply list-disc pl-6 mb-5 space-y-1;
+	}
+	.prose-church ol {
+		@apply list-decimal pl-6 mb-5 space-y-1;
+	}
+	.prose-church blockquote {
+		@apply border-l-4 border-crimson pl-5 italic font-display text-xl text-navy-mid my-6;
+	}
+	.prose-church a {
+		@apply text-royal underline underline-offset-4 hover:text-crimson;
+	}
+	.prose-church strong {
+		@apply text-navy-mid;
 	}
 }

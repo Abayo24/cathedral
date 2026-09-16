@@ -18,6 +18,10 @@ build/
 .env.test.local
 .env.production.local
 
+# local backups (original full-size photos, superseded source files)
+/image-originals/
+/_legacy/
+
 # debug logs
 npm-debug.log*
 yarn-debug.log*

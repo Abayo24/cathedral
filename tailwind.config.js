@@ -30,8 +30,9 @@ const config = {
         parchment: '#e8e1d0',
         ivory: '#f2ede0',
         cream: '#faf7f2',
+        // Both pass WCAG AA (4.5:1) as body text on white, cream and ivory.
         muted: '#6b6058',
-        faint: '#bbb0a0',
+        faint: '#7a6f62',
       },
       fontFamily: {
         display: ['var(--font-cormorant)', 'Georgia', 'serif'],
@@ -54,7 +55,7 @@ const config = {
       },
       animation: {
         'fade-up': 'fadeUp 0.9s cubic-bezier(.22,.61,.36,1) both',
-        'fade-in': 'fadeIn 1.2s ease both',
+        'fade-in': 'fadeIn 0.3s ease both',
       },
     },
   },
